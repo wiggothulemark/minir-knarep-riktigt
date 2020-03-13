@@ -62,11 +62,14 @@ namespace miniräknarepåriktigt
             Button plus = (Button)sender;
             Tal = double.Parse(MinTextbox.Text);
             MinTextbox.Clear();
-            operation = "+";
-            
-            
-            
-            
+            operation = "+"; 
+        }
+        private void KnappDelatMed_Click(object sender, EventArgs e)
+        {
+            Button delatMed = (Button)sender;
+            Tal = double.Parse(MinTextbox.Text);
+            MinTextbox.Clear();
+            operation = "/";
 
         }
 
@@ -75,6 +78,9 @@ namespace miniräknarepåriktigt
             
         }
 
+
+
+       
         public void KnappLikaMed_Click(object sender, EventArgs e)
         {
             NyttTal = double.Parse(MinTextbox.Text);
@@ -83,8 +89,12 @@ namespace miniräknarepåriktigt
                 case "+":
                     MinTextbox.Text = (Tal + NyttTal).ToString();
                     break;
+                case "/":
+                    MinTextbox.Text = (Tal / NyttTal).ToString();
+                    break;
+
             }
-                
+
         }
     }
 }

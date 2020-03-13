@@ -103,6 +103,7 @@
             this.KnappDelatMed.TabIndex = 4;
             this.KnappDelatMed.Text = "÷";
             this.KnappDelatMed.UseVisualStyleBackColor = true;
+            this.KnappDelatMed.Click += new System.EventHandler(this.KnappDelatMed_Click);
             // 
             // KnappProcent
             // 
@@ -281,7 +282,7 @@
             // 
             // MinTextbox
             // 
-            this.MinTextbox.Font = new System.Drawing.Font("ISOCT3_IV25", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MinTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MinTextbox.Location = new System.Drawing.Point(12, 12);
             this.MinTextbox.Name = "MinTextbox";
             this.MinTextbox.RightToLeft = System.Windows.Forms.RightToLeft.No;
