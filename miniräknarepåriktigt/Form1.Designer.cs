@@ -73,6 +73,7 @@
             this.KnappGånger.TabIndex = 1;
             this.KnappGånger.Text = "*";
             this.KnappGånger.UseVisualStyleBackColor = true;
+            this.KnappGånger.Click += new System.EventHandler(this.KnappGånger_Click);
             // 
             // KnappSex
             // 
@@ -113,6 +114,7 @@
             this.KnappProcent.TabIndex = 5;
             this.KnappProcent.Text = "%";
             this.KnappProcent.UseVisualStyleBackColor = true;
+            this.KnappProcent.Click += new System.EventHandler(this.KnappProcent_Click);
             // 
             // KnappDelatMedX
             // 
@@ -122,6 +124,7 @@
             this.KnappDelatMedX.TabIndex = 6;
             this.KnappDelatMedX.Text = "1/x";
             this.KnappDelatMedX.UseVisualStyleBackColor = true;
+            this.KnappDelatMedX.Click += new System.EventHandler(this.KnappDelatMedX_Click);
             // 
             // KnappMinus
             // 
@@ -132,6 +135,7 @@
             this.KnappMinus.TabIndex = 7;
             this.KnappMinus.Text = "-";
             this.KnappMinus.UseVisualStyleBackColor = true;
+            this.KnappMinus.Click += new System.EventHandler(this.KnappMinus_Click);
             // 
             // KnappPlus
             // 
@@ -189,6 +193,7 @@
             this.KnappDelete.TabIndex = 13;
             this.KnappDelete.Text = "<---";
             this.KnappDelete.UseVisualStyleBackColor = true;
+            this.KnappDelete.Click += new System.EventHandler(this.KnappDelete_Click);
             // 
             // KnappTre
             // 
@@ -279,6 +284,7 @@
             this.KnappRotenUr.TabIndex = 22;
             this.KnappRotenUr.Text = "√";
             this.KnappRotenUr.UseVisualStyleBackColor = true;
+            this.KnappRotenUr.Click += new System.EventHandler(this.KnappRotenUr_Click);
             // 
             // MinTextbox
             // 

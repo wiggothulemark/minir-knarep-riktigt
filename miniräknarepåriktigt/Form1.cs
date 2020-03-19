@@ -22,6 +22,8 @@ namespace miniräknarepåriktigt
         public double Tal = 0;
         public double NyttTal = 0;
         string operation = "";
+        public bool första = true;
+        
         
 
         private void press(object sender, EventArgs e)
@@ -55,14 +57,44 @@ namespace miniräknarepåriktigt
 
 
         }
-        
-
+        private void KnappDelete_Click(object sender, EventArgs e)
+        {
+            
+        }
+        private void KnappDelatMedX_Click(object sender, EventArgs e)
+        {
+            MinTextbox.Text =  (1/double.Parse(MinTextbox.Text)).ToString();
+        }
+        private void KnappRotenUr_Click(object sender, EventArgs e)
+        {
+            MinTextbox.Text = Math.Sqrt(double.Parse(MinTextbox.Text)).ToString();
+        }
+        private void KnappProcent_Click(object sender, EventArgs e)
+        {
+            MinTextbox.Text = (double.Parse(MinTextbox.Text) / 100).ToString();   
+        }
         private void KnappPlus_Click(object sender, EventArgs e)
         {
             Button plus = (Button)sender;
             Tal = double.Parse(MinTextbox.Text);
             MinTextbox.Clear();
-            operation = "+"; 
+            operation = "+";
+        }
+
+        private void KnappMinus_Click(object sender, EventArgs e)
+        {
+            Button minus = (Button)sender;
+            Tal = double.Parse(MinTextbox.Text);
+            MinTextbox.Clear();
+            operation = "-";
+        }
+
+        private void KnappGånger_Click(object sender, EventArgs e)
+        {
+            Button gånger = (Button)sender;
+            Tal = double.Parse(MinTextbox.Text);
+            MinTextbox.Clear();
+            operation = "*";
         }
         private void KnappDelatMed_Click(object sender, EventArgs e)
         {
@@ -83,18 +115,35 @@ namespace miniräknarepåriktigt
        
         public void KnappLikaMed_Click(object sender, EventArgs e)
         {
+            if(första == true) 
+            {
             NyttTal = double.Parse(MinTextbox.Text);
+                första = false;
+            }
             switch (operation)
             {
                 case "+":
                     MinTextbox.Text = (Tal + NyttTal).ToString();
+                    Tal = Tal + NyttTal;
                     break;
                 case "/":
-                    MinTextbox.Text = (Tal / NyttTal).ToString();
+                    
+                        MinTextbox.Text = (Tal / NyttTal).ToString();
+                        Tal = Tal / NyttTal;
+                        break;
+                case "-":
+                    MinTextbox.Text = (Tal - NyttTal).ToString();
+                    Tal = Tal - NyttTal;
+                    break;
+                case "*":
+                    MinTextbox.Text = (Tal * NyttTal).ToString();
+                    Tal = Tal * NyttTal;
                     break;
 
             }
 
         }
+
+        
     }
 }
