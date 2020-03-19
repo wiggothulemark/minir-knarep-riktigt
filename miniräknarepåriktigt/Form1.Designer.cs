@@ -165,6 +165,7 @@
             this.KnappClear.TabIndex = 10;
             this.KnappClear.Text = "C";
             this.KnappClear.UseVisualStyleBackColor = true;
+           
             // 
             // KnappClearEntry
             // 
@@ -174,6 +175,7 @@
             this.KnappClearEntry.TabIndex = 11;
             this.KnappClearEntry.Text = "CE";
             this.KnappClearEntry.UseVisualStyleBackColor = true;
+            
             // 
             // KnappLikaMed
             // 

@@ -23,7 +23,15 @@ namespace miniräknarepåriktigt
         public double NyttTal = 0;
         string operation = "";
         public bool första = true;
-        
+
+        //fixa gånger
+        //fixa multi
+        //fixa ce
+        //fixa c
+        //fixa radera
+        //fixa plus
+        //fixa minus
+        //kan fortsätta skriva efter lika med
         
 
         private void press(object sender, EventArgs e)
@@ -57,6 +65,8 @@ namespace miniräknarepåriktigt
 
 
         }
+        
+        
         private void KnappDelete_Click(object sender, EventArgs e)
         {
             
