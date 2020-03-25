@@ -15,14 +15,17 @@ namespace miniräknarepåriktigt
         public Form1()
         {
             InitializeComponent();
+            
 
             
         }
         public bool finnsKomma = false;
         public double Tal = 0;
         public double NyttTal = 0;
-        string operation = "";
+        public double resultat = 0;
+        string operation = "ingen";
         public bool första = true;
+        public string senastoperation = "";
 
         //fixa gånger
         //fixa multi
@@ -89,6 +92,7 @@ namespace miniräknarepåriktigt
             Tal = double.Parse(MinTextbox.Text);
             MinTextbox.Clear();
             operation = "+";
+            
         }
 
         private void KnappMinus_Click(object sender, EventArgs e)
@@ -125,35 +129,96 @@ namespace miniräknarepåriktigt
        
         public void KnappLikaMed_Click(object sender, EventArgs e)
         {
-            if(första == true) 
+            
+
+            if (MinTextbox.Text == "")
+                MinTextbox.Text = "0";
+           
+            if(operation != "ingen")
             {
-            NyttTal = double.Parse(MinTextbox.Text);
-                första = false;
-            }
-            switch (operation)
+               
+                if (första == true)
+                {
+                    
+                    NyttTal = double.Parse(MinTextbox.Text);
+
+                    första = false;
+                }
+                switch (operation)
             {
                 case "+":
-                    MinTextbox.Text = (Tal + NyttTal).ToString();
-                    Tal = Tal + NyttTal;
-                    break;
-                case "/":
-                    
-                        MinTextbox.Text = (Tal / NyttTal).ToString();
-                        Tal = Tal / NyttTal;
+                    resultat = Tal + NyttTal;
+                    MinTextbox.Text = (resultat).ToString();
+                    Tal =  Tal + NyttTal;
+                    första = true;
+                        senastoperation = operation;
+                        operation = "ingen";
+
                         break;
+                case "/":
+                    MinTextbox.Text = (Tal / NyttTal).ToString();
+                    Tal = Tal / NyttTal;
+                    första = true;
+                        senastoperation = operation;
+                        operation = "ingen";
+                    break;
                 case "-":
                     MinTextbox.Text = (Tal - NyttTal).ToString();
                     Tal = Tal - NyttTal;
+                    första = true;
+                        senastoperation = operation;
+                        operation = "ingen";
                     break;
                 case "*":
                     MinTextbox.Text = (Tal * NyttTal).ToString();
                     Tal = Tal * NyttTal;
+                    första = true;
+                        senastoperation = operation;
+                        operation = "ingen";
                     break;
 
+            }
+            }
+            else {
+
+                //NyttTal = double.Parse(MinTextbox.Text);
+
+                switch (senastoperation)
+            {
+                case "+":
+                    
+                    MinTextbox.Text = (Tal + NyttTal).ToString();
+                    //Tal =  Tal + NyttTal;
+                    
+                    
+                    break;
+                case "/":
+                    MinTextbox.Text = (Tal / NyttTal).ToString();
+                    Tal = Tal / NyttTal;
+                    
+                    
+                    break;
+                case "-":
+                    MinTextbox.Text = (Tal - NyttTal).ToString();
+                    Tal = Tal - NyttTal;
+                    
+                    
+                    break;
+                case "*":
+                    MinTextbox.Text = (Tal * NyttTal).ToString();
+                    //Tal = Tal * NyttTal                    
+                    break;
+            }
             }
 
         }
 
-        
+        private void KnappClear_Click(object sender, EventArgs e)
+        {
+            MinTextbox.Clear();
+            Tal = 0;
+            NyttTal = 0;
+            operation = "ingen";
+        }
     }
 }
