@@ -88,19 +88,27 @@ namespace miniräknarepåriktigt
         }
         private void KnappRotenUr_Click(object sender, EventArgs e)
         {
+            if (MinTextbox.Text == "")
+                MinTextbox.Text = "0";
             MinTextbox.Text = Math.Sqrt(double.Parse(MinTextbox.Text)).ToString();
         }
         private void KnappPlusMinus_Click(object sender, EventArgs e)
         {
+            if (MinTextbox.Text == "")
+                MinTextbox.Text = "0";
             MinTextbox.Text = (double.Parse(MinTextbox.Text) * -1).ToString();
         }
         private void KnappProcent_Click(object sender, EventArgs e)
         {
+            if (MinTextbox.Text == "")
+                MinTextbox.Text = "0";
             MinTextbox.Text = (double.Parse(MinTextbox.Text) / 100).ToString();   
         }
         private void KnappPlus_Click(object sender, EventArgs e)
         {
             Button plus = (Button)sender;
+            if (MinTextbox.Text == "")
+                MinTextbox.Text = "0";
             tal = double.Parse(MinTextbox.Text);
             MinTextbox.Clear();
             operation = "+";
@@ -110,6 +118,8 @@ namespace miniräknarepåriktigt
         private void KnappMinus_Click(object sender, EventArgs e)
         {
             Button minus = (Button)sender;
+            if (MinTextbox.Text == "")
+                MinTextbox.Text = "0";
             tal = double.Parse(MinTextbox.Text);
             MinTextbox.Clear();
             operation = "-";
@@ -118,6 +128,8 @@ namespace miniräknarepåriktigt
         private void KnappGånger_Click(object sender, EventArgs e)
         {
             Button gånger = (Button)sender;
+            if (MinTextbox.Text == "")
+                MinTextbox.Text = "0";
             tal = double.Parse(MinTextbox.Text);
             MinTextbox.Clear();
             operation = "*";
@@ -125,16 +137,15 @@ namespace miniräknarepåriktigt
         private void KnappDelatMed_Click(object sender, EventArgs e)
         {
             Button delatMed = (Button)sender;
+            if (MinTextbox.Text == "")
+                MinTextbox.Text = "0";
             tal = double.Parse(MinTextbox.Text);
             MinTextbox.Clear();
             operation = "/";
 
         }
 
-        private void MinTextbox_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
+        
 
 
 

@@ -302,7 +302,7 @@
             this.MinTextbox.Size = new System.Drawing.Size(291, 55);
             this.MinTextbox.TabIndex = 23;
             this.MinTextbox.Text = "";
-            this.MinTextbox.TextChanged += new System.EventHandler(this.MinTextbox_TextChanged);
+            
             // 
             // WiggosKalkylator
             // 
