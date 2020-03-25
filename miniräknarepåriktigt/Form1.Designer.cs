@@ -1,6 +1,6 @@
 ﻿namespace miniräknarepåriktigt
 {
-    partial class Form1
+    partial class WiggosKalkylator
     {
         /// <summary>
         /// Required designer variable.
@@ -129,7 +129,7 @@
             // KnappMinus
             // 
             this.KnappMinus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.KnappMinus.Location = new System.Drawing.Point(192, 256);
+            this.KnappMinus.Location = new System.Drawing.Point(189, 254);
             this.KnappMinus.Name = "KnappMinus";
             this.KnappMinus.Size = new System.Drawing.Size(54, 55);
             this.KnappMinus.TabIndex = 7;
@@ -140,7 +140,7 @@
             // KnappPlus
             // 
             this.KnappPlus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.KnappPlus.Location = new System.Drawing.Point(192, 320);
+            this.KnappPlus.Location = new System.Drawing.Point(189, 320);
             this.KnappPlus.Name = "KnappPlus";
             this.KnappPlus.Size = new System.Drawing.Size(54, 55);
             this.KnappPlus.TabIndex = 8;
@@ -156,10 +156,11 @@
             this.KnappPlusMinus.TabIndex = 9;
             this.KnappPlusMinus.Text = "±";
             this.KnappPlusMinus.UseVisualStyleBackColor = true;
+            this.KnappPlusMinus.Click += new System.EventHandler(this.KnappPlusMinus_Click);
             // 
             // KnappClear
             // 
-            this.KnappClear.Location = new System.Drawing.Point(129, 73);
+            this.KnappClear.Location = new System.Drawing.Point(132, 73);
             this.KnappClear.Name = "KnappClear";
             this.KnappClear.Size = new System.Drawing.Size(54, 55);
             this.KnappClear.TabIndex = 10;
@@ -175,6 +176,7 @@
             this.KnappClearEntry.TabIndex = 11;
             this.KnappClearEntry.Text = "CE";
             this.KnappClearEntry.UseVisualStyleBackColor = true;
+            this.KnappClearEntry.Click += new System.EventHandler(this.KnappClearEntry_Click);
             // 
             // KnappLikaMed
             // 
@@ -188,12 +190,14 @@
             // 
             // KnappDelete
             // 
+            this.KnappDelete.BackColor = System.Drawing.Color.LightGray;
+            this.KnappDelete.ForeColor = System.Drawing.SystemColors.ControlText;
             this.KnappDelete.Location = new System.Drawing.Point(12, 73);
             this.KnappDelete.Name = "KnappDelete";
             this.KnappDelete.Size = new System.Drawing.Size(54, 55);
             this.KnappDelete.TabIndex = 13;
             this.KnappDelete.Text = "<---";
-            this.KnappDelete.UseVisualStyleBackColor = true;
+            this.KnappDelete.UseVisualStyleBackColor = false;
             this.KnappDelete.Click += new System.EventHandler(this.KnappDelete_Click);
             // 
             // KnappTre
@@ -238,7 +242,7 @@
             // 
             // KnappFyra
             // 
-            this.KnappFyra.Location = new System.Drawing.Point(12, 192);
+            this.KnappFyra.Location = new System.Drawing.Point(12, 195);
             this.KnappFyra.Name = "KnappFyra";
             this.KnappFyra.Size = new System.Drawing.Size(54, 55);
             this.KnappFyra.TabIndex = 18;
@@ -289,7 +293,9 @@
             // 
             // MinTextbox
             // 
-            this.MinTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MinTextbox.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.MinTextbox.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MinTextbox.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.MinTextbox.Location = new System.Drawing.Point(12, 12);
             this.MinTextbox.Name = "MinTextbox";
             this.MinTextbox.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -298,10 +304,11 @@
             this.MinTextbox.Text = "";
             this.MinTextbox.TextChanged += new System.EventHandler(this.MinTextbox_TextChanged);
             // 
-            // Form1
+            // WiggosKalkylator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Yellow;
             this.ClientSize = new System.Drawing.Size(318, 390);
             this.Controls.Add(this.MinTextbox);
             this.Controls.Add(this.KnappRotenUr);
@@ -327,8 +334,8 @@
             this.Controls.Add(this.KnappSex);
             this.Controls.Add(this.KnappGånger);
             this.Controls.Add(this.KnappNoll);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "WiggosKalkylator";
+            this.Text = "Wiggos Kalkylator";
             this.ResumeLayout(false);
 
         }
