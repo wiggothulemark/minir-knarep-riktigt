@@ -19,21 +19,27 @@ namespace miniräknarepåriktigt
 
             
         }
-        public bool finnsKomma = false;
+        public bool finnsKommatecken = false;
         public double tal = 0;
         public double nyttTal = 0;
         public double resultat = 0;
         public string operation = "ingen";
         public bool första = true;
         public string senasteOperation = "";
-        
+ 
+
 
        
         
 
-        private void press(object sender, EventArgs e)
+        private void press(object sender, EventArgs e) //gör att om man trycker på en siffra så skrivs siffran ut i textboxen
         {
             Button knapp = (Button)sender;
+            if (MinTextbox.Text == "0" && sender == KnappNoll)//man kan inte spamma nollor i början
+            {
+
+            }
+            else
             MinTextbox.Text += knapp.Text;
         }
 
@@ -42,17 +48,17 @@ namespace miniräknarepåriktigt
             
             Button komma = (Button)sender;
 
-            if (sender == komma && finnsKomma == false)
+            if (sender == komma && finnsKommatecken == false)
             {
                 if(MinTextbox.Text == "")
                 {
                     MinTextbox.Text += "0,";
-                    finnsKomma = true;
+                    finnsKommatecken = true;
                 }
                 else
                 {
                 MinTextbox.Text += ",";
-                finnsKomma = true;
+                finnsKommatecken = true;
                 }
 
                 
@@ -67,7 +73,7 @@ namespace miniräknarepåriktigt
         {
             MinTextbox.Clear();
         }
-        private void KnappClear_Click(object sender, EventArgs e)
+        private void KnappClear_Click(object sender, EventArgs e)//nollställer hela miniräknaren
         {
             MinTextbox.Clear();
             tal = 0;
@@ -79,7 +85,7 @@ namespace miniräknarepåriktigt
  
             if (MinTextbox.TextLength > 0)
             {
-                MinTextbox.Text = MinTextbox.Text.Substring(0, (MinTextbox.TextLength - 1));
+                MinTextbox.Text = MinTextbox.Text.Substring(0, (MinTextbox.TextLength - 1));//tar bort sista siffran i talet
             }
         }
         private void KnappDelatMedX_Click(object sender, EventArgs e)
@@ -104,7 +110,7 @@ namespace miniräknarepåriktigt
                 MinTextbox.Text = "0";
             MinTextbox.Text = (double.Parse(MinTextbox.Text) / 100).ToString();   
         }
-        private void KnappPlus_Click(object sender, EventArgs e)
+        private void KnappPlus_Click(object sender, EventArgs e)//sparar talet som står i textboxen för att sedan addera med ett annat
         {
             Button plus = (Button)sender;
             if (MinTextbox.Text == "")
@@ -115,7 +121,7 @@ namespace miniräknarepåriktigt
             
         }
 
-        private void KnappMinus_Click(object sender, EventArgs e)
+        private void KnappMinus_Click(object sender, EventArgs e)//sparar talet som står i textboxen för att sedan subtrahera ett annat från det
         {
             Button minus = (Button)sender;
             if (MinTextbox.Text == "")
@@ -125,7 +131,7 @@ namespace miniräknarepåriktigt
             operation = "-";
         }
 
-        private void KnappGånger_Click(object sender, EventArgs e)
+        private void KnappGånger_Click(object sender, EventArgs e)//sparar talet som står i textboxen för att sedan multiplicera med ett annat
         {
             Button gånger = (Button)sender;
             if (MinTextbox.Text == "")
@@ -134,7 +140,7 @@ namespace miniräknarepåriktigt
             MinTextbox.Clear();
             operation = "*";
         }
-        private void KnappDelatMed_Click(object sender, EventArgs e)
+        private void KnappDelatMed_Click(object sender, EventArgs e)//sparar talet som står i textboxen för att sedan dividera med ett annat
         {
             Button delatMed = (Button)sender;
             if (MinTextbox.Text == "")
@@ -150,7 +156,7 @@ namespace miniräknarepåriktigt
 
 
        
-        public void KnappLikaMed_Click(object sender, EventArgs e)
+        public void KnappLikaMed_Click(object sender, EventArgs e)//gör operarationen
         {
             
 
@@ -167,8 +173,8 @@ namespace miniräknarepåriktigt
 
                     första = false;
                 }
-                switch (operation)
-            {
+                switch (operation)//operation med det nya talet (första gången man trycker lika med)
+                {
                 case "+":
                     resultat = tal + nyttTal;
                     MinTextbox.Text = (resultat).ToString();
@@ -204,9 +210,9 @@ namespace miniräknarepåriktigt
             }
             else {
                
-                //NyttTal = double.Parse(MinTextbox.Text);
+               
 
-                switch (senasteOperation)
+                switch (senasteOperation)//gör operationen om det är andra eller mer gången man trycker lika med i rad
             {
                 case "+":
 
