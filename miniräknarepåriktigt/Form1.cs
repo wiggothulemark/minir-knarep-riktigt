@@ -79,6 +79,7 @@ namespace miniräknarepåriktigt
             tal = 0;
             nyttTal = 0;
             operation = "ingen";
+            finnsKommatecken = false;
         }
         private void KnappDelete_Click(object sender, EventArgs e)
         {
