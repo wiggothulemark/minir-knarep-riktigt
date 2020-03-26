@@ -72,6 +72,7 @@ namespace miniräknarepåriktigt
         private void KnappClearEntry_Click(object sender, EventArgs e)
         {
             MinTextbox.Clear();
+            finnsKommatecken = false;
         }
         private void KnappClear_Click(object sender, EventArgs e)//nollställer hela miniräknaren
         {
@@ -91,6 +92,8 @@ namespace miniräknarepåriktigt
         }
         private void KnappDelatMedX_Click(object sender, EventArgs e)
         {
+            if (MinTextbox.Text == "")
+                MinTextbox.Text = "0";
             MinTextbox.Text =  (1/double.Parse(MinTextbox.Text)).ToString();
         }
         private void KnappRotenUr_Click(object sender, EventArgs e)
@@ -119,7 +122,7 @@ namespace miniräknarepåriktigt
             tal = double.Parse(MinTextbox.Text);
             MinTextbox.Clear();
             operation = "+";
-            
+            finnsKommatecken = false;
         }
 
         private void KnappMinus_Click(object sender, EventArgs e)//sparar talet som står i textboxen för att sedan subtrahera ett annat från det
@@ -130,6 +133,7 @@ namespace miniräknarepåriktigt
             tal = double.Parse(MinTextbox.Text);
             MinTextbox.Clear();
             operation = "-";
+            finnsKommatecken = false;
         }
 
         private void KnappGånger_Click(object sender, EventArgs e)//sparar talet som står i textboxen för att sedan multiplicera med ett annat
@@ -140,6 +144,7 @@ namespace miniräknarepåriktigt
             tal = double.Parse(MinTextbox.Text);
             MinTextbox.Clear();
             operation = "*";
+            finnsKommatecken = false;
         }
         private void KnappDelatMed_Click(object sender, EventArgs e)//sparar talet som står i textboxen för att sedan dividera med ett annat
         {
@@ -149,6 +154,7 @@ namespace miniräknarepåriktigt
             tal = double.Parse(MinTextbox.Text);
             MinTextbox.Clear();
             operation = "/";
+            finnsKommatecken = false;
 
         }
 
@@ -159,7 +165,6 @@ namespace miniräknarepåriktigt
        
         public void KnappLikaMed_Click(object sender, EventArgs e)//gör operarationen
         {
-            
 
             if (MinTextbox.Text == "")
                 MinTextbox.Text = "0";
